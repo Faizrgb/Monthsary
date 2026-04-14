@@ -131,3 +131,73 @@ function startSubtleSparkles() {
         }
     }, 400); 
 }
+
+// Final 'I Love You' Interactions
+window.showLoveQuestion = function() {
+    const sceneApology = document.getElementById('scene-apology');
+    const sceneLove = document.getElementById('scene-love');
+    transitionTo(sceneApology, sceneLove);
+}
+
+window.wrongAnswer = function() {
+    const wrongBtn = document.getElementById('wrong-btn');
+    const wrongMsg = document.getElementById('wrong-msg');
+    
+    // reset animation to trigger it again
+    wrongBtn.classList.remove('shake');
+    // void wrapper triggers a reflow
+    void wrongBtn.offsetWidth; 
+    wrongBtn.classList.add('shake');
+    
+    // show the warning message
+    wrongMsg.classList.remove('hidden');
+    // slight delay to ensure it applies opacity after display block
+    setTimeout(() => {
+        wrongMsg.style.opacity = '1';
+    }, 10);
+    
+    // hide it after a few seconds
+    setTimeout(() => {
+        wrongMsg.style.opacity = '0';
+        setTimeout(() => {
+            wrongMsg.classList.add('hidden');
+        }, 300);
+    }, 3000);
+}
+
+window.finalYayy = function() {
+    const sceneLove = document.getElementById('scene-love');
+    const sceneFinal = document.getElementById('scene-final');
+    
+    transitionTo(sceneLove, sceneFinal);
+    
+    setTimeout(() => {
+        startFinalShower();
+    }, 800);
+}
+
+function startFinalShower() {
+    const container = document.querySelector('#scene-final .hearts-container');
+    const heartSymbols = ['❤️', '💖', '🥰', '🎇', '✨', '💗'];
+    
+    setInterval(() => {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        
+        const left = Math.random() * 100;
+        const duration = Math.random() * 3 + 2; 
+        const scale = Math.random() * 1.5 + 0.5; 
+        
+        heart.style.left = left + '%';
+        heart.style.animationDuration = duration + 's';
+        heart.style.transform = `scale(${scale})`;
+        
+        if (container) {
+            container.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+    }, 120); 
+}

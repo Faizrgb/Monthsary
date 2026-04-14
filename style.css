@@ -361,6 +361,23 @@ h1, h2 {
     font-weight: bold;
 }
 
+/* Final Scene Additions */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both !important;
+    background: #ff4757 !important;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4) !important;
+}
+
+.wrong-btn-style {
+    font-size: 0.95rem; /* Slightly smaller for the long text */
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .bounce-text { font-size: 2.5rem; }

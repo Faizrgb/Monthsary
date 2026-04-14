@@ -62,7 +62,29 @@
                     <span class="date-text">Forever yours since</span>
                     <span class="date-value">15th March 2026</span>
                 </div>
+                <button class="cute-btn continue-btn" onclick="showLoveQuestion()" style="margin-top: 2rem; display: inline-block;">And finally...</button>
             </div>
+            <div class="hearts-container"></div>
+        </div>
+
+        <!-- Scene 5: I Love You Question -->
+        <div id="scene-love" class="scene hidden">
+            <div class="card">
+                <h2 class="love-title" style="font-size: 3.5rem; margin-bottom: 2rem;">I Love You ❤️</h2>
+                <div class="options-grid" style="grid-template-columns: 1fr;">
+                    <button class="cute-btn" onclick="finalYayy()">I love you 2</button>
+                    <button class="cute-btn" onclick="finalYayy()">I love you more</button>
+                    <button class="cute-btn" onclick="finalYayy()">I love you infinity</button>
+                    <button id="wrong-btn" class="cute-btn wrong-btn-style" onclick="wrongAnswer()">ABHI BHI NAHI BOLUNGI</button>
+                </div>
+                <p id="wrong-msg" class="wrong-message hidden" style="color: #ff4757; font-weight: bold; margin-top: 1rem; opacity: 0; transition: opacity 0.3s; height: 20px;">Wait, you must choose one of the top three! 🥺</p>
+            </div>
+        </div>
+
+        <!-- Scene 6: Final Yay -->
+        <div id="scene-final" class="scene hidden">
+            <h1 class="celebrate-text">Heart goes brrr! 💖</h1>
+            <p class="sub-text">You are my everything! Forever and always.</p>
             <div class="hearts-container"></div>
         </div>
     </div>
