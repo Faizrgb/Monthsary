@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Monthsary!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Scene 1: The Envelope -->
+        <div id="scene-envelope" class="scene active">
+            <h1 class="bounce-text">Happy 1st Monthsary Rida!</h1>
+            <p class="subtitle">I have something for you... Tap the envelope!</p>
+            
+            <div class="envelope-wrapper" tabindex="0">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-paper">
+                        <div class="paper-content">
+                            <p>Open me!</p>
+                        </div>
+                    </div>
+                    <div class="envelope-front"></div>
+                    <div class="heart-seal">❤️</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 2: The Question -->
+        <div id="scene-question" class="scene hidden">
+            <div class="card">
+                <h2>My Dearest Rida,</h2>
+                <p class="main-question">Would you like to spend the rest of your life getting irritated by me?</p>
+                
+                <div class="options-grid">
+                    <button class="cute-btn" onclick="celebrate()">Yes</button>
+                    <button class="cute-btn" onclick="celebrate()">Sure</button>
+                    <button class="cute-btn" onclick="celebrate()">Why not</button>
+                    <button class="cute-btn" onclick="celebrate()">100%</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 3: Celebration -->
+        <div id="scene-celebration" class="scene hidden">
+            <h1 class="celebrate-text">I knew it! 🥰</h1>
+            <p class="sub-text">I love you so much! Here's to many more months and years together. ❤️</p>
+            <button class="cute-btn continue-btn" onclick="showApology()">One more thing...</button>
+            <div class="hearts-container"></div>
+        </div>
+
+        <!-- Scene 4: Apology & Date -->
+        <div id="scene-apology" class="scene hidden">
+            <div class="card apology-card">
+                <p class="apology-text">
+                    I'm so sorry for ever doubting your love.<br><br>
+                    Thank you for everything, and for making me feel like the luckiest person in the world. ✨
+                </p>
+                <div class="date-badge">
+                    <span class="date-text">Forever yours since</span>
+                    <span class="date-value">15th March 2026</span>
+                </div>
+            </div>
+            <div class="hearts-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
